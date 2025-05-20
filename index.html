@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>TITULO</title>
+  <script type="text/javascript" src="https://arquimedes.matem.unam.mx/Descartes5/lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="1024" height="625">
+      <param name="tamaño" value="1024x625">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' ancho='100%' alto='100%' fijo='sí' O.x='-50%' O.y='-50%' red='no' red10='no' ejes='no' ">
+      <param name="E_02" value="tipo='R2' id='MASK' ancho='100%' alto='100%' dibujar-si='shwINFO|shwRETRO' fijo='sí' fondo='95000000' red='no' red10='no' ejes='no' ">
+      <param name="E_03" value="tipo='R2' id='INFO' x='102' y='62' ancho='820' alto='500' dibujar-si='shwINFO' fijo='sí' red='no' red10='no' ejes='no' ">
+      <param name="C_01" value="id='clsInfoBt' interfaz='botón' tipo='numérico' región='interior' espacio='INFO' nombre='╳' expresión='(INFO._w-(5+40),5,40,40)' color='ffffff' color-int='ffffffff' negrita='sí' fuente puntos='26' acción='calcular' parámetro='shwINFO=0' extra_style='flat=1' ">
+      <param name="C_02" value="id='shwInfoBt' interfaz='botón' tipo='numérico' región='interior' espacio='E1' nombre='i' expresión='(5,5,40,40)' color='ffffff' color-int='9aae07' negrita='sí' cursiva='sí' font_family='Serif' fuente puntos='26' acción='calcular' parámetro='shwINFO=1' extra_style='flat=1|borderRadius=10|overColor=bdd609' tooltip='Muestra el panel de información.' ">
+      <param name="C_03" value="id='VerifyBt' interfaz='botón' tipo='numérico' región='interior' espacio='E1' nombre='Verificar' expresión='(50+ent((E1._w-100-500)/3),E1._h-(sep+70),250,50)' color='ffffff' color-int='9aae07' negrita='sí' fuente puntos='26' acción='calcular' parámetro='answer=verifyAnswer();wrong=(!answer)?1:0' activo-si='onQuestion' extra_style='flat=1|borderRadius=10|overColor=bdd609' tooltip='Lanza otro ejercicio.' ">
+      <param name="C_04" value="id='ReInitBt' interfaz='botón' tipo='numérico' región='interior' espacio='E1' nombre='Reiniciar' expresión='(50+ent((E1._w-100-500)/3)+1*(250+ent((E1._w-100-500)/3)),E1._h-(sep+70),250,50)' color='ffffff' color-int='9aae07' negrita='sí' fuente puntos='26' acción='calcular' parámetro='reInit();onWait=1;indx=-1' extra_style='flat=1|borderRadius=10|overColor=bdd609' tooltip='Lanza otro ejercicio.' ">
+      <param name="C_05" value="id='nTf' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' expresión='(sep+20,430,50,50)' valor='&squot;&squot;' incr='1' min='0' max='1' discreto='sí' decimales='0' visible='sí' acción='calcular' parámetro='n=_Num_(nTf)' dibujar-si='onQuestion' font_family='Serif' fuente puntos='24' ">
+      <param name="C_06" value="id='dTf' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' expresión='(sep+120,400,50,50)' valor='&squot;&squot;' incr='1' min='0' max='B.filas-1' discreto='sí' decimales='0' visible='sí' acción='calcular' parámetro='d=_Num_(dTf)' dibujar-si='onQuestion' font_family='Serif' fuente puntos='24' ">
+      <param name="C_07" value="id='respTf' tipo='numérico' interfaz='campo de texto' solo_texto='sí' región='interior' espacio='E1' expresión='(sep+200,430,75,50)' valor='&squot;&squot;' incr='1' min='0' max='511' discreto='sí' decimales='0' visible='sí' acción='calcular' parámetro='resp=_Num_(respTf)' dibujar-si='onQuestion' font_family='Serif' fuente puntos='24' ">
+      <param name="A_01" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='E1.Ox=-ent(E1._w/2);E1.Oy=-ent(E1._h/2);E1.escala=1;;shwINFO=1;;sep=ent((E1._w-B.filas*50-100)/(B.filas+1));reInit()' ">
+      <param name="A_02" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' hacer='MC=E1.mouse_clicked;MP=E1.mouse_pressed;MDown=MP&(!MPA);MDragged=MP&MPA;MReleased=MPA&(!MP);MPA=MP;Mx=E1.mouse_x;My=E1.mouse_y;;validClick=(onWait)?checkForValidClick():0' ">
+      <param name="A_03" value="id='validClickEv' evento='sí' condición='onWait&MReleased&checkForValidClick()' acción='calcular' parámetro='indx=ent((Mx-sep-50)/(sep+50));onWait=0;onQuestion=1' ejecución='alternar' ">
+      <param name="A_04" value="id='B' matriz='sí' evaluar='una-sola-vez' columnas='3' filas='9' expresión='_n=0;_chk=1;_vetted=2' tipo='matriz' ">
+      <param name="A_05" value="id='Sm' vector='sí' evaluar='una-sola-vez' tamaño='9' tipo='vector' ">
+      <param name="A_06" value="id='reInit()' algoritmo='sí' expresión='1' local='i' inicio='i=0;onWait=1;indx=-1;Mx=0;My=0;goodAnswers=0;answerSum=0' hacer='B[i,_n]=(rnd>0.5);B[i,_chk]=-1;B[i,_vetted]=0;Sm[i]=-1;answerSum=answerSum+B[i,_n]*(2^(B.filas-1-i));i=i+1' mientras='i<B.filas' tipo='función' ">
+      <param name="A_07" value="id='checkForValidClick()' algoritmo='sí' expresión='onSpot' local='onSpot,onX,onY,i,vetted' inicio='onX=0;i=0;onY=((My>-200)&(My<-150));vetted=((ent((Mx-sep-50)/(sep+50))>=0)&(ent((Mx-sep-50)/(sep+50))<=8))?(B[ent(Mx-sep-50)/(sep+50),_vetted]):vetted' hacer='onX=(abs(sep+75+i*(sep+50)-Mx)<25)?1:onX;i=i+1;onSpot=(onX&onY&(!vetted))' mientras='i<B.filas' tipo='función' ">
+      <param name="A_08" value="id='verifyAnswer()' algoritmo='sí' expresión='ansr' local='ansr' hacer='ansr1=((n==B[indx,_n])&(nTf!=&squot;&squot;))?1:0;ansr2=((d==B.filas-1-indx)&(dTf!=&squot;&squot;))?1:0;ansr3=((resp==B[indx,_n]*(2^(B.filas-1-indx)))&(respTf!=&squot;&squot;))?1:0;ansr=(ansr1&ansr2&ansr3);(ansr)?setForNextAnswer():&squot;&squot;' tipo='función' ">
+      <param name="A_09" value="id='setForNextAnswer()' algoritmo='sí' expresión='1' hacer='B[indx,_chk]=1;B[indx,_vetted]=1;Sm[indx]=B[indx,_n]*(2^(B.filas-1-indx));goodAnswers=goodAnswers+1;onWait=1;onQuestion=0;nTf=&squot;&squot;;dTf=&squot;&squot;;respTf=&squot;&squot;;answer=0;wrong=0;indx=-1' tipo='función' ">
+      <param name="G_01" value="espacio='E1' tipo='texto' color='20303a' coord_abs='sí' expresión='(ent(E1._w/2),50)' texto='De binario a decimal' ancho='1' fuente puntos='40' align='a_left' anchor='a_center_center' info='Título.' ">
+      <param name="G_02" value="espacio='INFO' tipo='rectángulo' color='9aae07' coord_abs='sí' expresión='(0,0,INFO._w,50)' relleno='9aae07' ancho='1' info='Barra tit. INFO.' ">
+      <param name="G_03" value="espacio='INFO' tipo='texto' color='20303a' coord_abs='sí' expresión='(10,10)' texto='Convirtiendo de binario a decimal' ancho='1' fuente puntos='26' align='a_left' anchor='a_top_left' info='Tit. INFO.' ">
+      <param name="G_04" value="espacio='INFO' tipo='texto' fondo='sí' color='20303a' coord_abs='sí' expresión='(10,60)' texto='Hay una receta sencilla para convertir de binario a decimal:\n\n• Se toma el dígito más extremo a la izquierda, y se cuenta cuál es su posición contando desde la derecha, y empezando en el cero. Así, si por ejemplo es el tercero, su posición será la \${3-1=2}. Usemos la variable \i{p} de \i{posición}.\n• Observa si el dígito en esa posición es el 0 o el 1. Usemos la variable \i{d} para representarlo. A manera de ejemplo, supón que es 1.\n• Evalúa la expresión \${d×2^p}. En nuestro ejemplo, sería \${1×2^2=4}. Este número es uno de los sumandos que te dará la expresión en decimal, así que conviene anotarlo.\n• Repite este procedimiento para el resto de las posiciones a la derecha, hasta llegar a la primera (la posición cero).\n• Suma todos los sumandos. La suma es el número binario expresado en base decimal.\n\nPulsa en cada uno de los dígitos del ejercicio y completa los valores correctos para cada uno.' ancho='INFO._w-20' fuente puntos='20' align='a_left' anchor='a_top_left' info='Text INFO.' ">
+      <param name="G_05" value="espacio='E1' tipo='rectángulo' color='e3e3e3' coord_abs='sí' expresión='(50,100,E1._w-100,E1._h-150)' relleno='e3e3e3' ancho='1' border_radius='10' info='Panel.' ">
+      <param name="G_06" value="espacio='E1' tipo='segmento' color='20303a' coord_abs='sí' expresión='(50+sep+(50+sep)*s,200)(50+sep+50+(50+sep)*s,200)' familia='s' s.intervalo='[0,B.filas-1]' s.pasos='B.filas-1' tamaño='0' ancho='3' info='Subrayas.' ">
+      <param name="G_07" value="espacio='E1' tipo='texto' color='20303a' coord_abs='sí' expresión='(50+sep+25+(50+sep)*s,175)' familia='s' s.intervalo='[0,B.filas-1]' s.pasos='B.filas-1' texto='[B[s,_n]]' decimales='0' ancho='1' fuente puntos='35' align='a_left' anchor='a_center_center' info='Dígitos binarios.' ">
+      <param name="G_08" value="espacio='E1' tipo='rectángulo' color='bd0000' dibujar-si='!onWait' coord_abs='sí' expresión='(sep+75+indx*(sep+50)-20,200-45,40,40)' ancho='3' info='Marcador.' ">
+      <param name="G_09" value="espacio='E1' tipo='texto' color='20303a' coord_abs='sí' expresión='(sep+50+25+s*(sep+50),130)' familia='s' s.intervalo='[0,B.filas-1]' s.pasos='B.filas-1' texto='[(B[s,_chk]==1)?&squot;✅&squot;:((B[s,_chk]==0)?&squot;❌&squot;:&squot;&squot;)]' ancho='1' fuente puntos='40' align='a_left' anchor='a_center_center' info='Imgs califas.' ">
+      <param name="G_10" value="espacio='E1' tipo='texto' color='20303a' dibujar-si='Sm[s]>-1' coord_abs='sí' expresión='(sep+75+s*(sep+50),210)' familia='s' s.intervalo='[0,B.filas-1]' s.pasos='B.filas-1' texto='[Sm[s]]' decimales='0' ancho='1' font_family='Serif' fuente puntos='35' align='a_left' anchor='a_top_center' info='Suma términos.' ">
+      <param name="G_11" value="espacio='E1' tipo='texto' color='20303a' dibujar-si='(s>0)&(Sm[s]>-1)' coord_abs='sí' expresión='(50+sep/2+s*(sep+50),210)' familia='s' s.intervalo='[0,B.filas-1]' s.pasos='B.filas-1' texto='+' decimales='0' ancho='1' font_family='Serif' fuente puntos='35' align='a_left' anchor='a_top_center' info='Signos suma.' ">
+      <param name="G_12" value="espacio='E1' tipo='texto' color='20303a' dibujar-si='onQuestion' coord_abs='sí' expresión='(sep+20,240)' texto='\j{Observa qué dígito, de derecha a izquierda, es el que oprimiste. Usa este dígito apropiadamente en la fórmula para calcular la contribución (sumando) de este dígito en el conteo. En el resultado de la potencia introduce sólo el resultado.}' ancho='E1._w-2*(sep+20)' fuente puntos='24' align='a_left' anchor='a_top_left' info='Instrucción.' ">
+      <param name="G_13" value="espacio='E1' tipo='texto' color='20303a' dibujar-si='onQuestion' coord_abs='sí' expresión='(125,455)' texto='\${×2        =}' ancho='1' font_family='Serif' fuente puntos='30' align='a_left' anchor='a_center_left' info='Texto Ejercicio.' ">
+      <param name="G_14" value="espacio='E1' tipo='texto' color='20303a' dibujar-si='onQuestion&wrong' coord_abs='sí' expresión='(sep+295,375)' texto='Conviene que recuerdes algunos puntos:\n• ¿El número de dígito se cuenta de izquierda a derecha o al revés?\n• ¿Hay que corregir el número de dígito sumándole o restándole una unidad?\n• ¿Qué papel juega el 1 o el 0 que se encuentra en dicho dígito en la fórmula?\nRevisa: [(!ansr1)?&squot;tu dígito         &squot;:&squot;&squot;][(!ansr2)?&squot;tu exponente         &squot;:&squot;&squot;][(!ansr3)?&squot;tu evaluación&squot;:&squot;&squot;]' ancho='E1._w-(sep+295+20)' align='a_left' anchor='a_top_left' info='Retroalimentación.' ">
+      <param name="G_15" value="espacio='E1' tipo='texto' color='20303a' dibujar-si='goodAnswers==9' coord_abs='sí' expresión='(sep+295,200+ent((E1._h-340)/2))' texto='¡Perfecto! La suma es el número en decimal, y es [answerSum].\n\nPulsa \i{Reiniciar} para lanzar otro ejercicio.' decimales='0' ancho='1' fuente puntos='24' align='a_left' anchor='a_center_left' info='Todo bien.' ">
+      <param name="G_16" value="espacio='E1' tipo='texto' fondo='sí' color='20303a' dibujar-si='0' coord_abs='sí' expresión='(100,20)' texto='validClick=[validClick]\nindx=[indx]\nonWait=[onWait]\nanswer=[answer]\n[answerSum]' fijo='no' ancho='1' align='a_left' anchor='a_top_left' info='Debug.' ">
+    </ajs>
+  </div>
+
+
+
+</body>
+</html>
